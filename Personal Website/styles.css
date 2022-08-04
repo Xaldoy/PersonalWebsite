@@ -1,11 +1,15 @@
 /* Main styles */
+html {
+    height: 100vh;
+}
 
 body {
-    margin: 0px;
+    margin: 0;
     font-family: verdana;
     overflow: hidden;
     background-image: url("Images/background.png");
     background-size:cover;
+    background-repeat: repeat;
 }
 
 /* Navbar styles */
@@ -13,11 +17,11 @@ body {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    padding: 36px;
+    padding: 1.875vw;
     text-transform: uppercase;
     background-color: antiquewhite;
-    box-shadow: 0px 8px #317372;
-    border-bottom: 10px double #317372;
+    box-shadow: 0 0.74vh #317372;
+    border-bottom: 1vh double #317372;
 }
 
 .leftnav {
@@ -31,8 +35,7 @@ body {
 }
 
 .navbar-link-wrapper {
-    margin: 0px 8px;
-    padding: 0px 0px;
+    margin: 0 0.741vh;
 }
 
 .navbar-link-wrapper a {
@@ -40,34 +43,35 @@ body {
     flex-direction: column;
     align-items: center;
     position: relative;
-    top: 0px;
-    padding: 8px 12px;
+    top: 0;
+    padding: 0.741vh;
     color: black;
     background-color: white;
-    border: 4px double black;
+    border: 0.6vh double black;
     border-radius: 12px;
-    box-shadow: -5px 5px #317372;
+    box-shadow: -0.5vh 0.5vh #317372;
     transition: background-color .2s, box-shadow .2s, top .2s;
     text-decoration: none;
 }
 
 .navbar-link-wrapper:hover>a {
-    top: 4px;
+    top: 0.5vh;
     background-color: whitesmoke;
     box-shadow: none;
 }
 
 .navbar-link-wrapper a img {
     object-fit: contain;
-    height: 40px;
-    width: 40px;
+    height: 4vh;
+    width: 4vh;
 }
 
 .brand {
-    padding: 8px 12px;
+    padding: 2vh 3vh;
     background-color: white;
     border-radius: 12px;
-    border: 4px double black;
+    border: 0.6vh double black;
+    font-size: 1.5vh;
     /* box-shadow: -4px 4px #317372; */
 }
 
@@ -81,23 +85,23 @@ body {
     display: flex;
     flex-direction: column;
     position: relative;
-    padding: 0px 40px;
-    margin-top: 18vh;
+    padding: 0 2.1vw;
+    margin-top: 24vh;
     margin-left: 7vw;
     width: fit-content;
     font-family: century gothic;
-    font-size: 2em;
-    box-shadow: -20px 20px #317372;
+    font-size: 2.78vh;
+    box-shadow: -1.85vh 1.85vh #317372;
     background-color: antiquewhite;
 
-    border: 10px double #317372;
+    border: 1vh double #317372;
     animation: appearmsg 1s ease-in-out, movemsg 1s ease-in-out 0.4s infinite alternate;
     transition: background-color .5s, box-shadow .1s, transform .1s;
 }
 
 .msg h1 {
     font-weight: lighter;
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 .msg:hover {
@@ -128,9 +132,11 @@ body {
     }
 
     100% {
-        top: -20px;
+        top: -1.85vh;
     }
 }
+
+/* Left of */
 
 .contactbutton {
     font-weight: bold;
@@ -154,11 +160,11 @@ body {
 .rightcontent {
     display: flex;
     justify-content: space-between;
-    width: 60vw;
+    width: 62vw;
 }
 
 .photos {
-    margin-top: 70px;
+    margin-top: 6.6vh;
     animation: appearphotos 1s ease-in-out;
 }
 
@@ -188,6 +194,7 @@ body {
     position: relative;
     border: 10px double #317372;
     transition: background-color .5s, transform .1s;
+    text-align: center;
 }
 
 .photos div::before {
@@ -220,7 +227,7 @@ body {
 }
 
 .photos a {
-    display: inline-block;
+    display: block;
     padding: 30px 50px;
     color: black;
     text-decoration: none;
@@ -237,8 +244,8 @@ body {
 }
 
 .photos img {
-    height: 150px;
-    width: 150px;
+    height: 7.813vw;
+    width: 7.813vw;
     object-fit: contain;
 }
 
@@ -247,7 +254,7 @@ body {
 }
 
 .photo2 {
-    animation: movephoto 1s ease-in-out -0.3s infinite alternate;
+    animation: movephoto 1s ease-in-out -0.8s infinite alternate;
     margin-top: -160px;
     right: -200px;
 }
@@ -314,7 +321,7 @@ body {
 
 /* Footer styles */
 .footer {
-    position: fixed;
+    position: absolute;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -322,4 +329,22 @@ body {
     color: black;
     text-align: center;
     border-top: 4px solid #317372;
+}
+
+.email {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.email p{
+    color: black;
+}
+
+.email img {
+    margin: 10px 10px;
+    height: 25px;
+    width: 25px;
+    object-fit: contain;
 }
