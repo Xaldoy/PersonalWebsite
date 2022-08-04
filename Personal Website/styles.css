@@ -17,13 +17,14 @@ body {
     border-bottom: 10px double #317372;
 }
 
-@keyframes movnavbar {
-    0% {box-shadow: 0px 10px #317372;}
-    100% {box-shadow: 0px 8px #317372;}
-}
-
 .leftnav {
     display: flex;
+    align-self: center;
+}
+
+.rightnav {
+    display: flex;
+    align-self: center;
 }
 
 .navbar-link-wrapper {
@@ -32,6 +33,7 @@ body {
 }
 
 .navbar-link-wrapper a {
+    position: relative;
     top: 0px;
     padding: 9px 12px;
     color: black;
@@ -44,69 +46,73 @@ body {
 }
 
 .navbar-link-wrapper:hover>a {
-    position: relative;
     top: 4px;
     background-color: whitesmoke;
     box-shadow: none;
-}
-
-.rightnav {
-    display: flex;
-    align-self: center;
 }
 
 .brand {
     padding: 9px 12px;
     background-color: white;
     border-radius: 12px;
-    border: 1px solid black;
+    border: 4px double black;
     /* box-shadow: -4px 4px #317372; */
 }
 
 /* Content styles */
 .content {
-    display:flex;
+    display: flex;
     justify-content: space-between;
 }
 
 .msg {
-    padding: 0px 40px;
-    width: fit-content;
-    background-color: antiquewhite;
     display: flex;
     flex-direction: column;
-    font-size: 2em;
-    margin: 100px 0px 0px 100px;
-    box-shadow: -30px 30px #317372;
-    border-style: double;
-    border-color: #317372;
-    border-width: 10px;
+    position: relative;
+    padding: 0px 40px;
+    top: 18vh;
+    left: 7vw;
+    width: fit-content;
     font-family: century gothic;
-    animation:  appearmsg 2s ease-in-out,
-                movemsg 1s ease-in-out 0.4s infinite alternate; 
-}
-
-.msg:hover {
-    animation-play-state: paused;
-}
-
-.msg:hover > .contactbutton {
-    animation-play-state: paused;
-}
-
-@keyframes movemsg {
-    0% {margin-top: 100px; box-shadow: -30px 30px #317372;}
-    100% {margin-top: 90px; box-shadow: -30px 25px #317372;}
-}
-
-@keyframes appearmsg {
-    0% {margin-left: -500px;}
-    100% {margin-left: 100px;}
+    font-size: 2em;
+    box-shadow: -30px 30px #317372;
+    background-color: antiquewhite;
+    border: 10px double #317372;
+    animation: appearmsg 1s ease-in-out,
+        movemsg 1s ease-in-out 0.4s infinite alternate;
+    transition: background-color .5s;
 }
 
 .msg h1 {
     font-weight: lighter;
     margin-bottom: 0px;
+}
+
+.msg:hover {
+    animation-play-state: paused;
+    background-color: #d1c4b2;
+}
+
+@keyframes movemsg {
+    0% {
+        margin-top: 0px;
+        box-shadow: -30px 30px #317372;
+    }
+
+    100% {
+        margin-top: -20px;
+        box-shadow: -30px 25px #317372;
+    }
+}
+
+@keyframes appearmsg {
+    0% {
+        margin-left: -600px;
+    }
+
+    100% {
+        margin-left: 0px;
+    }
 }
 
 .contactbutton {
@@ -134,84 +140,81 @@ body {
 }
 
 .photos {
-    margin-top: 50px;
+    margin-top: 70px;
 }
 
-.photos img{
+.photos>a>div {
+    z-index: -0.5;
+    background-color: antiquewhite;
+    position: relative;
+    padding: 30px 50px;
+    border: 10px double #317372;
+    transition: background-color .5s;
+}
+
+.photos>a>div::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    box-shadow: -30px 30px #317372;
+}
+
+.photos>a>div:hover {
+    animation-play-state: paused;
+    /* background-color: #ccc0af; */
+    background-color: #d1c4b2;
+}
+
+.photos > a {
+    text-decoration: none;
+}
+
+.photos > a:visited {
+    color:black;
+    font-weight: lighter;
+}
+
+.photos h2 {
+    margin: 0px 0px 10px 0px;
+    text-align: center;
+}
+
+.photos img {
     display: block;
     height: 150px;
     object-fit: cover;
 }
 
 .photo1 {
-    position: relative;
-    background-color: antiquewhite;
-    padding: 50px;
-    border: 10px double #317372;
     box-shadow: -20px 20px #317372;
     animation: movephoto 1s ease-in-out 0s infinite alternate;
 }
 
 .photo2 {
-    margin-top: -120px;
+    margin-top: -160px;
     right: -200px;
-    background-color: antiquewhite; 
-    position: relative;
-    padding: 50px;
-    border: 10px double #317372;
-    animation: movephoto 1s ease-in-out -.2s infinite alternate;
+    animation: movephoto 1s ease-in-out -0.3s infinite alternate;
 }
 
 .photo3 {
-    margin-top: -120px;
-    right: -50px;
-    background-color: antiquewhite; 
-    position: relative;
-    padding: 50px;
-    border: 10px double #317372;
-    animation: movephoto 1s ease-in-out -.4s infinite alternate;
-}
-
-.photo2::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    box-shadow: -30px 30px #317372;
-}
-
-.photo3::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    box-shadow: -30px 30px #317372;
-}
-
-.photo1:hover {
-    animation-play-state: paused;
-}
-
-.photo2:hover {
-    animation-play-state: paused;
-}
-
-.photo3:hover {
-    animation-play-state: paused;
+    margin-top: -80px;
+    right: -30px;
+    animation: movephoto 1s ease-in-out -0.6s infinite alternate;
 }
 
 @keyframes movephoto {
-    0% {top: 0px;}
-    100% {top: 20px;}
+    0% {
+        top: 0px;
+    }
+
+    100% {
+        top: 30px;
+    }
 }
-
-
 
 /* Footer styles */
 .footer {
@@ -223,4 +226,4 @@ body {
     color: black;
     text-align: center;
     border-top: 4px solid #317372;
-  }
+}
