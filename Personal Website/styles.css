@@ -75,12 +75,12 @@ body {
     width: fit-content;
     font-family: century gothic;
     font-size: 2em;
-    box-shadow: -30px 30px #317372;
+    box-shadow: -20px 20px #317372;
     background-color: antiquewhite;
     border: 10px double #317372;
     animation: appearmsg 1s ease-in-out,
         movemsg 1s ease-in-out 0.4s infinite alternate;
-    transition: background-color .5s;
+    transition: background-color .5s, box-shadow .1s;
 }
 
 .msg h1 {
@@ -91,17 +91,16 @@ body {
 .msg:hover {
     animation-play-state: paused;
     background-color: #d1c4b2;
+    box-shadow: none;
 }
 
 @keyframes movemsg {
     0% {
         margin-top: 0px;
-        box-shadow: -30px 30px #317372;
     }
 
     100% {
         margin-top: -20px;
-        box-shadow: -30px 25px #317372;
     }
 }
 
@@ -117,16 +116,18 @@ body {
 
 .contactbutton {
     font-family: verdana;
+    font-weight: bold;
     font-size: 0.5em;
+    text-transform: uppercase;
     align-self: center;
     margin-bottom: 30px;
     padding: 20px 30px;
     color: black;
-    background-color: white;
-    border: 4px double black;
+    border: 5px solid black;
     border-radius: 6px;
     transition: background-color .2s;
     text-decoration: none;
+    background-color: antiquewhite;
 }
 
 .contactbutton:hover {
@@ -149,7 +150,7 @@ body {
     position: relative;
     padding: 30px 50px;
     border: 10px double #317372;
-    transition: background-color .5s;
+    transition: background-color .5s, transform 1s;
 }
 
 .photos>a>div::before {
@@ -160,28 +161,44 @@ body {
     left: 0;
     right: 0;
     z-index: -1;
-    box-shadow: -30px 30px #317372;
+    box-shadow: -20px 20px #317372;
+    transition: box-shadow .1s;
+}
+
+.photos>a>div:hover::before {
+    box-shadow: none;
 }
 
 .photos>a>div:hover {
     animation-play-state: paused;
-    /* background-color: #ccc0af; */
     background-color: #d1c4b2;
+    z-index: -.1;
+    box-shadow: none;
 }
 
-.photos > a {
-    color:black;
+.photos>a>div:hover>h2 {
+    transform: scale(1.1);
+}
+
+.photos>a>div:hover>img {
+    
+}
+
+.photos>a {
+    color: black;
     text-decoration: none;
 }
 
-.photos > a:visited {
-    color:black;
+.photos>a:visited {
+    color: black;
     font-weight: lighter;
 }
 
 .photos h2 {
     margin: 0px 0px 10px 0px;
     text-align: center;
+    text-transform: uppercase;
+    transition: transform .1s;
 }
 
 .photos img {
@@ -191,7 +208,6 @@ body {
 }
 
 .photo1 {
-    box-shadow: -20px 20px #317372;
     animation: movephoto 1s ease-in-out 0s infinite alternate;
 }
 
