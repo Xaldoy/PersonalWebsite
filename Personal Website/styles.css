@@ -3,6 +3,7 @@
 body {
     margin: 0px;
     font-family: verdana;
+    overflow: hidden;
 }
 
 /* Navbar styles */
@@ -78,9 +79,8 @@ body {
     box-shadow: -20px 20px #317372;
     background-color: antiquewhite;
     border: 10px double #317372;
-    animation: appearmsg 1s ease-in-out,
-        movemsg 1s ease-in-out 0.4s infinite alternate;
-    transition: background-color .5s, box-shadow .1s;
+    animation: appearmsg 1s ease-in-out, movemsg 1s ease-in-out 0.4s infinite alternate;
+    transition: background-color .5s, box-shadow .1s, transform .1s;
 }
 
 .msg h1 {
@@ -89,9 +89,14 @@ body {
 }
 
 .msg:hover {
+    transform: scale(1.05);
     animation-play-state: paused;
     background-color: #d1c4b2;
     box-shadow: none;
+}
+
+.msg:not(:hover) {
+    transition-delay: 0s, .1s, 0s;
 }
 
 @keyframes movemsg {
@@ -142,18 +147,28 @@ body {
 
 .photos {
     margin-top: 70px;
+    animation: appearphotos 1s ease-in-out;
 }
 
-.photos>a>div {
+@keyframes appearphotos {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+.photos>div {
     z-index: -0.5;
     background-color: antiquewhite;
     position: relative;
-    padding: 30px 50px;
     border: 10px double #317372;
-    transition: background-color .5s, transform 1s;
+    transition: background-color .5s, transform .1s;
 }
 
-.photos>a>div::before {
+.photos>div::before {
     content: "";
     position: absolute;
     top: 0;
@@ -163,28 +178,29 @@ body {
     z-index: -1;
     box-shadow: -20px 20px #317372;
     transition: box-shadow .1s;
+    transition-delay: -.05s;
 }
 
-.photos>a>div:hover::before {
+.photos>div:hover::before {
     box-shadow: none;
 }
 
-.photos>a>div:hover {
+.photos>div:not(:hover)::before {
+    transition-delay: .1s;
+}
+
+
+.photos>div:hover {
+    transform: scale(1.05);
     animation-play-state: paused;
     background-color: #d1c4b2;
-    z-index: -.1;
+    z-index: 1;
     box-shadow: none;
 }
 
-.photos>a>div:hover>h2 {
-    transform: scale(1.1);
-}
-
-.photos>a>div:hover>img {
-    
-}
-
-.photos>a {
+.photos a {
+    display: block;
+    padding: 30px 50px;
     color: black;
     text-decoration: none;
 }
@@ -218,7 +234,7 @@ body {
 }
 
 .photo3 {
-    margin-top: -80px;
+    margin-top: -120px;
     right: -30px;
     animation: movephoto 1s ease-in-out -0.6s infinite alternate;
 }
