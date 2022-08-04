@@ -30,13 +30,13 @@ body {
 
 .navbar-link-wrapper {
     margin: 0px 8px;
-    padding: 10px 0px;
+    padding: 12px 0px;
 }
 
 .navbar-link-wrapper a {
     position: relative;
     top: 0px;
-    padding: 9px 12px;
+    padding: 8px 12px;
     color: black;
     background-color: white;
     border: 4px double black;
@@ -53,7 +53,7 @@ body {
 }
 
 .brand {
-    padding: 9px 12px;
+    padding: 8px 12px;
     background-color: white;
     border-radius: 12px;
     border: 4px double black;
@@ -71,8 +71,8 @@ body {
     flex-direction: column;
     position: relative;
     padding: 0px 40px;
-    top: 18vh;
-    left: 7vw;
+    margin-top: 18vh;
+    margin-left: 7vw;
     width: fit-content;
     font-family: century gothic;
     font-size: 2em;
@@ -99,35 +99,34 @@ body {
     transition-delay: 0s, .1s, 0s;
 }
 
-@keyframes movemsg {
+@keyframes appearmsg {
     0% {
-        margin-top: 0px;
+        transform: translateX(-150%);
     }
 
     100% {
-        margin-top: -20px;
+        transform: translateX(0%);
     }
 }
 
-@keyframes appearmsg {
+@keyframes movemsg {
     0% {
-        margin-left: -600px;
+        top: 0px;
     }
 
     100% {
-        margin-left: 0px;
+        top: -20px;
     }
 }
 
 .contactbutton {
-    font-family: verdana;
     font-weight: bold;
     font-size: 0.5em;
+    color: black;
     text-transform: uppercase;
     align-self: center;
     margin-bottom: 30px;
     padding: 20px 30px;
-    color: black;
     border: 5px solid black;
     border-radius: 6px;
     transition: background-color .2s;
@@ -160,7 +159,17 @@ body {
     }
 }
 
-.photos>div {
+@keyframes movephoto {
+    0% {
+        top: 0px;
+    }
+
+    100% {
+        top: 30px;
+    }
+}
+
+.photos div {
     z-index: -0.5;
     background-color: antiquewhite;
     position: relative;
@@ -168,7 +177,7 @@ body {
     transition: background-color .5s, transform .1s;
 }
 
-.photos>div::before {
+.photos div::before {
     content: "";
     position: absolute;
     top: 0;
@@ -178,19 +187,18 @@ body {
     z-index: -1;
     box-shadow: -20px 20px #317372;
     transition: box-shadow .1s;
-    transition-delay: -.05s;
+    transition-delay: -0.05s;
 }
 
-.photos>div:hover::before {
+.photos div:hover::before {
     box-shadow: none;
 }
 
-.photos>div:not(:hover)::before {
+.photos div:not(:hover)::before {
     transition-delay: .1s;
 }
 
-
-.photos>div:hover {
+.photos div:hover {
     transform: scale(1.05);
     animation-play-state: paused;
     background-color: #d1c4b2;
@@ -199,7 +207,7 @@ body {
 }
 
 .photos a {
-    display: block;
+    display: inline-block;
     padding: 30px 50px;
     color: black;
     text-decoration: none;
@@ -207,20 +215,18 @@ body {
 
 .photos>a:visited {
     color: black;
-    font-weight: lighter;
 }
 
 .photos h2 {
     margin: 0px 0px 10px 0px;
     text-align: center;
     text-transform: uppercase;
-    transition: transform .1s;
 }
 
 .photos img {
-    display: block;
     height: 150px;
-    object-fit: cover;
+    width: 150px;
+    object-fit: contain;
 }
 
 .photo1 {
@@ -228,25 +234,111 @@ body {
 }
 
 .photo2 {
+    animation: movephoto 1s ease-in-out -0.3s infinite alternate;
     margin-top: -160px;
     right: -200px;
-    animation: movephoto 1s ease-in-out -0.3s infinite alternate;
 }
 
 .photo3 {
+    animation: movephoto 1s ease-in-out -0.6s infinite alternate;
     margin-top: -120px;
     right: -30px;
-    animation: movephoto 1s ease-in-out -0.6s infinite alternate;
 }
 
-@keyframes movephoto {
-    0% {
-        top: 0px;
-    }
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
 
-    100% {
-        top: 30px;
-    }
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: antiquewhite;
+    border: 10px double #317372;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+    margin-top: 0;
+    color: black;
+}
+
+.popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+.popup .close:hover {
+    color: #317372;
+}
+
+.popup .content {
+    max-height: 30%;
+    overflow: auto;
+    display: block;
+}
+
+.mailform {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mailform input,
+textarea {
+    margin-bottom: 10px;
+    width: 20vw;
+    font-family: century gothic;
+    color: black;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.mailform label {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.mailform button {
+    margin-top: 20px;
+    padding: 20px 30px;
+    font-size: 1.5em;
+    font-weight: bold;
+    background-color:antiquewhite;
+    border: 10px double #317372;
+}
+
+.mailform button:hover {
+    background-color:whitesmoke;
+}
+
+.mailform textarea {
+    overflow:auto;
+    height: 200px;
 }
 
 /* Footer styles */
