@@ -14,8 +14,7 @@ body {
     font-family: verdana;
     overflow: hidden;
     background-image: url("Images/background.png");
-    background-repeat: repeat-y;
-    background-position: center;
+    background-size: cover;
 }   
 
 /* Navbar styles */
@@ -83,11 +82,6 @@ body {
     align-items: center;
 }
 
-@media only screen and (max-width: 420px){
-
-
-}
-
 @media only screen and (max-width: 1000px) {
 
     .content {
@@ -115,7 +109,10 @@ body {
     }
 
     body {
+        background-size: auto;
         overflow: scroll;
+        background-repeat: repeat-y;
+        background-position: center;
     }
 
     .centercontent {
