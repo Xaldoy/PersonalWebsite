@@ -131,6 +131,7 @@ body {
         width: 70vw !important;
         height: 70vh !important;
         margin-top: 11vh;
+	margin-bottom: 5vh;
     }
 
     .rightcontent > .msg {
