@@ -345,6 +345,7 @@ body {
     height: 16vh;
     width: 16vh;
     object-fit: contain;
+    margin-bottom: 2vh;
 }
 
 .photo1 {
