@@ -11,7 +11,7 @@ body {
   margin: 0;
   font-family: verdana;
   overflow: hidden;
-  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("Images/Backgrounds/background.png");
+  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("../Images/Backgrounds/background.png");
   background-size: cover;
 }
 
