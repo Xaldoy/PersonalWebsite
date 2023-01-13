@@ -185,6 +185,21 @@ body {
     animation: appearcenter 1s ease-in-out;
 }
 
+.center-content {
+    display:flex;
+    justify-content: center;
+    .project1 {
+        h1 {
+            margin: 0;
+        }
+        width: 80%;
+        height: auto;
+        background-color: $bright_color;
+        padding: 20px;
+        border: 5px solid $dark_color;
+    }
+}
+
 .leftcontent>.msg {
     animation: appearleft 1s ease-in-out, movemsg 1s ease-in-out 0.4s infinite alternate;
 }
