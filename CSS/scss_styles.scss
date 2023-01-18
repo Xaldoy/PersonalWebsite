@@ -186,12 +186,14 @@ body {
 }
 
 .center-content {
-    display:flex;
+    display: flex;
     justify-content: center;
+
     .project1 {
         h1 {
             margin: 0;
         }
+
         width: 80%;
         height: auto;
         background-color: $bright_color;
