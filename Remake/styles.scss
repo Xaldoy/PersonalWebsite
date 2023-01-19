@@ -109,7 +109,7 @@ body {
 .frontpage_right {
     .content_block {
         max-height: calc(60vh - 19px);
-        animation: appearleft 1s ease-in-out, movemsg 1s ease-in-out 0.4s infinite alternate;
+        animation: appearright 1s ease-in-out, movemsg 1s ease-in-out 0.4s infinite alternate;
 
         p {
             max-width: 19vw;
@@ -123,7 +123,7 @@ body {
 
 .frontpage_left {
     .content_block {
-        animation: appearright 1s ease-in-out, movemsg 1s ease-in-out 0.2s infinite alternate;
+        animation: appearleft 1s ease-in-out, movemsg 1s ease-in-out 0.2s infinite alternate;
 
         &:hover {
             overflow-y: hidden;

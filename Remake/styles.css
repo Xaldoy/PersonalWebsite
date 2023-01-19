@@ -90,8 +90,8 @@ body {
 
 .frontpage_right .content_block {
   max-height: calc(60vh - 19px);
-  -webkit-animation: appearleft 1s ease-in-out, movemsg 1s ease-in-out 0.4s infinite alternate;
-          animation: appearleft 1s ease-in-out, movemsg 1s ease-in-out 0.4s infinite alternate;
+  -webkit-animation: appearright 1s ease-in-out, movemsg 1s ease-in-out 0.4s infinite alternate;
+          animation: appearright 1s ease-in-out, movemsg 1s ease-in-out 0.4s infinite alternate;
 }
 .frontpage_right .content_block p {
   max-width: 19vw;
@@ -102,8 +102,8 @@ body {
 }
 
 .frontpage_left .content_block {
-  -webkit-animation: appearright 1s ease-in-out, movemsg 1s ease-in-out 0.2s infinite alternate;
-          animation: appearright 1s ease-in-out, movemsg 1s ease-in-out 0.2s infinite alternate;
+  -webkit-animation: appearleft 1s ease-in-out, movemsg 1s ease-in-out 0.2s infinite alternate;
+          animation: appearleft 1s ease-in-out, movemsg 1s ease-in-out 0.2s infinite alternate;
 }
 .frontpage_left .content_block:hover {
   overflow-y: hidden;
