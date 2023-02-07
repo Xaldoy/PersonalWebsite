@@ -69,7 +69,7 @@ body {
   background-color: #F0F5F9;
   border: 1vh double #1E2022;
   border-radius: 1vh;
-  transition: background-color 0.2s, box-shadow 0.2s, top 0.2s;
+  transition: background-color 0.2s, top 0.2s, box-shadow 0.1s;
   text-decoration: none;
   position: relative;
   top: 0;
@@ -91,11 +91,11 @@ body {
 
 .frontpage_right .content_block {
   max-height: calc(60vh - 19px);
-  -webkit-animation: appearleft 1s ease-in-out, movemsg 1s ease-in-out 0.4s infinite alternate;
-          animation: appearleft 1s ease-in-out, movemsg 1s ease-in-out 0.4s infinite alternate;
+  -webkit-animation: appearright 1s ease-in-out, movemsg 1s ease-in-out 0.4s infinite alternate;
+          animation: appearright 1s ease-in-out, movemsg 1s ease-in-out 0.4s infinite alternate;
 }
 .frontpage_right .content_block p {
-  max-width: 19vw;
+  max-width: 16vw;
 }
 .frontpage_right .content_block:hover {
   -webkit-animation-play-state: paused;
@@ -103,8 +103,8 @@ body {
 }
 
 .frontpage_left .content_block {
-  -webkit-animation: appearright 1s ease-in-out, movemsg 1s ease-in-out 0.2s infinite alternate;
-          animation: appearright 1s ease-in-out, movemsg 1s ease-in-out 0.2s infinite alternate;
+  -webkit-animation: appearleft 1s ease-in-out, movemsg 1s ease-in-out 0.2s infinite alternate;
+          animation: appearleft 1s ease-in-out, movemsg 1s ease-in-out 0.2s infinite alternate;
 }
 .frontpage_left .content_block:hover {
   overflow-y: hidden;
@@ -124,7 +124,7 @@ body {
   transition-timing-function: ease-in-out;
 }
 .content_block:hover {
-  overflow-y: scroll;
+  overflow-y: auto;
   transform: scale(1.1);
   -webkit-animation-play-state: paused;
           animation-play-state: paused;
@@ -203,11 +203,11 @@ body {
   text-transform: uppercase;
 }
 .frontpage_center div img {
-  height: 14.5vh;
-  width: 14.5vh;
+  height: 13.5vh;
+  width: 13.5vh;
   -o-object-fit: contain;
      object-fit: contain;
-  margin-bottom: 3.5vh;
+  margin-bottom: 3.2vh;
 }
 .frontpage_center :nth-child(1) {
   -webkit-animation: movephoto 1s ease-in-out 0s infinite alternate;
@@ -229,6 +229,7 @@ body {
 }
 
 .footer {
+  z-index: 2;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -247,6 +248,9 @@ body {
   margin-right: 10px;
   border-radius: 5px;
 }
+.footer a {
+  color: black;
+}
 .footer p {
   border: 2px solid #1E2022;
   font-family: century gothic;
@@ -254,6 +258,10 @@ body {
   padding: 0.5vh 1vh;
   border-radius: 8px;
   background-color: #F0F5F9;
+}
+.footer p:hover {
+  background-color: #C9D6DF;
+  color: #1E2022;
 }
 
 @-webkit-keyframes appearleft {
@@ -359,7 +367,7 @@ body {
   }
   .frontpage .frontpage_left {
     width: 70vw;
-    margin-top: 5vh;
+    margin-top: 6vh;
   }
   .frontpage .frontpage_left .content_block {
     text-align: center;
@@ -374,6 +382,6 @@ body {
     margin-bottom: 12vh;
   }
   .frontpage .frontpage_right p {
-    max-width: 95%;
+    max-width: 62vw;
   }
 }/*# sourceMappingURL=styles.css.map */

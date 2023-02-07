@@ -86,7 +86,7 @@ body {
         background-color: $bright_color;
         border: 1vh double $black;
         border-radius: 1vh;
-        transition: background-color .2s, box-shadow .2s, top .2s;
+        transition: background-color .2s, top .2s, box-shadow .1s;
         text-decoration: none;
         position: relative;
         top: 0;
@@ -110,10 +110,10 @@ body {
 .frontpage_right {
     .content_block {
         max-height: calc(60vh - 19px);
-        animation: appearleft 1s ease-in-out, movemsg 1s ease-in-out 0.4s infinite alternate;
+        animation: appearright 1s ease-in-out, movemsg 1s ease-in-out 0.4s infinite alternate;
 
         p {
-            max-width: 19vw;
+            max-width: 16vw;
         }
 
         &:hover {
@@ -124,7 +124,7 @@ body {
 
 .frontpage_left {
     .content_block {
-        animation: appearright 1s ease-in-out, movemsg 1s ease-in-out 0.2s infinite alternate;
+        animation: appearleft 1s ease-in-out, movemsg 1s ease-in-out 0.2s infinite alternate;
 
         &:hover {
             overflow-y: hidden;
@@ -145,7 +145,7 @@ body {
     transition-timing-function: ease-in-out;
 
     &:hover {
-        overflow-y: scroll;
+        overflow-y: auto;
         transform: scale(1.1);
         animation-play-state: paused;
         box-shadow: none;
@@ -231,10 +231,10 @@ body {
         }
 
         img {
-            height: 14.5vh;
-            width: 14.5vh;
+            height: 13.5vh;
+            width: 13.5vh;
             object-fit: contain;
-            margin-bottom: 3.5vh;
+            margin-bottom: 3.2vh;
         }
     }
 
@@ -259,6 +259,7 @@ body {
 
 
 .footer {
+    z-index: 2;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -278,6 +279,10 @@ body {
         border-radius: 5px;
     }
 
+    a {
+        color: black;
+    }
+
     p {
         border: 2px solid $black;
         font-family: century gothic;
@@ -285,6 +290,11 @@ body {
         padding: .5vh 1vh;
         border-radius: 8px;
         background-color: $bright_color;
+
+        &:hover {
+            background-color: $medium_color;
+            color: $black;
+        }
     }
 }
 
@@ -360,7 +370,7 @@ body {
 
         .frontpage_left {
             width: 70vw;
-            margin-top: 5vh;
+            margin-top: 6vh;
 
             .content_block {
                 text-align: center;
@@ -379,7 +389,7 @@ body {
             margin-bottom: 12vh;
 
             p {
-                max-width: 95%;
+                max-width: 62vw;
             }
         }
     }
