@@ -15,7 +15,7 @@ body {
 
 .navbar {
   font-family: century gothic;
-  height: 100px;
+  min-height: 100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -91,28 +91,27 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin: 0 50px;
+  height: calc(100vh - 200px);
 }
 
+.text {
+  width: 35vw;
+}
 .text .introduction {
-  margin-bottom: 90px;
-  max-width: 35vw;
-  font-size: 25px;
+  font-size: 3vh;
 }
 
 .pages {
   display: flex;
   justify-content: space-between;
-  margin-right: 100px;
-  margin-left: 20px;
 }
 .pages a {
-  font-size: 18px;
+  font-size: 2vh;
   color: black;
 }
 
 .photo img {
-  width: 50vw;
+  height: 60vh;
 }
 
 .frontpage_left,
