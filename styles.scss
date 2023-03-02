@@ -2,30 +2,21 @@ $shadow: #717981;
 
 html {
     height: 100%;
-    overflow: hidden;
 }
 
 body {
     height: 100%;
     margin: 0;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     font-family: century gothic;
 }
 
 .navbar {
-    min-height: 100px;
+    height: 15vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    div {
-        height: 7vh;
-        display: flex;
-        align-items: center;
-    }
 }
 
 .navbar_center {
@@ -42,11 +33,11 @@ body {
     min-width: fit-content;
     display: flex;
     justify-content: space-around;
+    align-items: center;
 
     .navbar_text {
-        font-size: 20px;
-        margin: 0 30px;
-
+        font-size: min(20px, 4vh);
+        margin: 0 min(30px, 3vh);
 
         h1 {
             user-select: none;
@@ -67,29 +58,29 @@ body {
 }
 
 .navbar_right {
-    min-width: fit-content;
-    margin-left: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: min(40px, 3vh);
 
     .navbar_link {
         display: flex;
         align-items: center;
-        margin-right: 40px;
-        height: fit-content;
-        width: fit-content;
+        margin-right: min(40px, 3vh);
 
         a {
             border: 2px solid black;
-            height: 56px;
-            width: 56px;
+            height: min(56px, 10vh);
+            width: min(56px, 10vh);
             position: relative;
             top: 0;
             transition: background-color .2s, top .2s, box-shadow .1s;
             box-shadow: 4px 4px $shadow;
 
             img {
-                padding: 7px;
-                height: 42px;
-                width: 42px;
+                padding: 10%;
+                height: 80%;
+                width: 80%;
             }
         }
 
@@ -105,28 +96,39 @@ body {
 }
 
 .frontpage {
+    min-height: 70vh;
     font-family: century gothic;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    height: calc(100vh - 300px);
 }
 
 .text {
-    width: 35vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     .introduction {
-        font-size: min(2.8vh, 1.8vw);
-        margin-bottom: 50px;
+
+        p {
+            margin: 0;
+        }
+
+        width: 85%;
+        font-size: min(5vh, 1.5vw);
+        margin-bottom: 4vh;
 
         #headline {
             font-weight: bold;
-            font-size: min(3.5vh, 2.2vw);
+            font-size: min(4vh, 2.2vw);
+            display: block;
+            padding-bottom: 3vh;
         }
     }
 }
 
 .pages {
+    width: 70%;
     display: flex;
     justify-content: space-between;
 
@@ -152,25 +154,32 @@ body {
 }
 
 .photo {
+    margin-right: 4vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+
     img {
         box-shadow: 10px 10px $shadow;
-        height: min(55vh, calc(100vh - 200px), 35vw)
+        height: 100%;
+        max-height: 30vw;
     }
 }
 
 .footer {
+    margin-top: 5vh;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: 100%;
     background-color: white;
     text-align: center;
-    height: 100px;
+    height: 10vh;
 
     img {
         background-color: white;
-        height: 25px;
+        height: max(3vh, 15px);
         margin-right: 4px;
 
     }
@@ -178,13 +187,12 @@ body {
     a {
         display: flex;
         margin: 0;
-        margin-bottom: -20px;
         color: black;
         align-items: center;
     }
 
     p {
-        font-size: 2vh;
+        font-size: max(2.5vh, 15px);
         padding: 0 6px;
         margin: 0;
     }
@@ -192,24 +200,24 @@ body {
 
 @media only screen and (max-aspect-ratio: 4/3) {
 
+    html {
+        height: fit-content;
+    }
+
     body {
         background-size: auto;
-        overflow: scroll;
-        background-repeat: repeat-y;
-        background-position: center;
     }
 
     .navbar {
-        position: relative;
-        top: 0;
-        z-index: 1;
+        min-height: 20vw;
         justify-content: space-between;
 
         .navbar_left {
             margin-left: 6vw;
+            width: fit-content;
 
             .navbar_text {
-                font-size: min(4vw, 16px);
+                font-size: min(3.5vw, 19px);
                 margin: 0;
 
                 h1 {
@@ -225,10 +233,10 @@ body {
         }
 
         .navbar_right {
-            margin-left: 6vw;
+            margin-left: 4vw;
 
             .navbar_link {
-                margin-right: 6vw;
+                margin-right: 4vw;
 
                 a {
                     height: min(56px, 15vw);
@@ -260,22 +268,23 @@ body {
 
     .frontpage {
         height: auto;
+        min-height: fit-content;
         flex-direction: column-reverse;
 
         .photo {
-            margin-bottom: 40px;
-
-            img {
-                width: 88vw;
-                height: auto;
-            }
+            display: none;
         }
 
         .text {
-            width: 88vw;
+            background-image: url("Images/architecture.jpg");
+            background-size: cover;
 
             .introduction {
-                margin-bottom: 40px;
+                margin-top: 50px;
+                width: 70%;
+                background: rgba(255, 255, 255);
+                border: 3px solid white;
+                padding: 4vw;
 
                 #headline {
                     font-size: 30px;
@@ -285,19 +294,20 @@ body {
                     margin: 0;
                 }
 
-                margin-top: 0;
                 font-size: 24px;
             }
         }
 
         .pages {
+            width: 90%;
             justify-content: space-evenly;
             margin-bottom: 70px;
 
             a {
+                background: rgba(255, 255, 255);
                 padding: 1vw;
                 border: 1px solid white;
-                font-size: max(1.7vw, 14px);
+                font-size: max(1.7vw, 12px);
                 color: black;
 
                 h2 {
@@ -308,7 +318,6 @@ body {
                 &:hover {
                     border: none;
                     border: 1px solid gray;
-                    transition: border .4s;
                 }
 
             }
@@ -316,9 +325,8 @@ body {
     }
 
     .footer {
-
-        height: 100px;
-        padding-bottom: 10px;
+        margin: 0;
+        max-height: fit-content;
 
         img {
             height: min(5vw, 24px);
