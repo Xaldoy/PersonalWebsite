@@ -133,7 +133,7 @@ body {
   .mobile-navbar {
     display: block;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: flex-end;
     height: 10vh;
     width: 80%;
@@ -141,7 +141,7 @@ body {
   .mobile-navbar a {
     color: black;
     font-family: "Bebas Neue", sans-serif;
-    font-size: 22px;
+    font-size: min(22px, 3vh);
     font-weight: bold;
   }
 }
@@ -227,16 +227,17 @@ body {
     margin-top: 20px;
   }
   .front .headline-container #headline {
-    font-size: 50px;
+    font-size: min(50px, 7vh, 13vw);
   }
   .front .headline-container #info {
-    font-size: 30px;
+    font-size: min(30px, 4vh, 8vw);
   }
 }
 .front .pages {
+  margin: 5vh 0;
   display: flex;
   width: 70%;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
 }
 .front .pages .page {
@@ -275,7 +276,7 @@ body {
 }
 @media only screen and (max-width: 555px) {
   .front {
-    height: 80vh;
+    height: 90vh;
     justify-content: center;
   }
 }/*# sourceMappingURL=styles.css.map */
