@@ -234,11 +234,16 @@ body {
   }
 }
 .front .pages {
-  margin: 5vh 0;
+  margin: 0;
   display: flex;
   width: 70%;
   justify-content: space-around;
   align-items: center;
+}
+@media (max-height: 655px) {
+  .front .pages {
+    margin: 10vh 0;
+  }
 }
 .front .pages .page {
   font-family: "Bebas Neue", sans-serif;
