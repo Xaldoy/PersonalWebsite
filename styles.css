@@ -341,7 +341,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(Images/Backgrounds/logisimback.png);
+  background-image: url(Images/Backgrounds/logisimbacktransparent.png);
+  background-size: cover;
+  background-color: rgb(255, 255, 255);
   max-width: 40%;
 }
 .project .project-content .project-about p {
