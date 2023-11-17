@@ -23,7 +23,9 @@
 
     <div class="navbar">
         <div class="title">
-            <h1>Matej Jurišić</h1>
+            <a href="index.html">
+                <h1>Matej Jurišić</h1>
+            </a>
         </div>
         <div class="navbar-break">
             <hr>
@@ -43,13 +45,13 @@
 
     <div class="mobile-navbar">
         <div class="mobile-link">
-            <a href="#">My Projects</a>
+            <a href="#projects">My Projects</a>
         </div>
         <div class="mobile-link">
-            <a href="#">About Me</a>
+            <a href="#">--------------</a>
         </div>
         <div class="mobile-link">
-            <a href="#">Download CV</a>
+            <a href="#">--------------</a>
         </div>
     </div>
 
@@ -98,22 +100,66 @@
         </div>
         <div class="pages">
             <div class="page">
-                <a href="#">
+                <a href="#projects">
                     <h2>My<br>Projects</h2>
                 </a>
             </div>
             <div class="page" style="height: 50%;">
                 <a href="#">
-                    <h2>About me</h2>
+                    <h2>--------</h2>
                 </a>
             </div>
             <div class="page">
                 <a href="#">
-                    <h2>Download <br> Cv</h2>
+                    <h2>--------</h2>
                 </a>
             </div>
         </div>
     </div>
+
+    <div id="projects" class="projects">
+        <div class="project">
+            <div class="project-name">
+                <h2>8-bit cpu design</h2>
+            </div>
+            <div class="project-content">
+                <div class="project-image">
+                    <video autoplay muted loop id="cpuvideo">
+                        <source src="Videos/cpuslow.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="project-about">
+                    <p>
+                        <span id="procesor">Ovaj rad prikazuje moj vlastiti dizajn 8-bitnog procesora u programu
+                            Logisim.</span><br><br>
+                        Dizajn procesora je u potpunosti samostalno napravljen, te ne koristi ideje i arhitekturu
+                        nijednog
+                        meni poznatog procesora.<br> Računalo podržava <span style="font-weight: bolder;">81
+                            različitu instrukciju</span> i sposobno je
+                        izvoditi programe poput <span style="font-weight: bold;">rastavljanja broja na proste
+                            faktore</span> i <span style="font-weight: bold;">traženja prostih brojeva.</span>
+                        <br>
+                        Računalo radi s <span style="font-weight: bold;">32-bitnim podatcima,</span> a za <span
+                            style="font-weight: bold;">adresiranje
+                            koristi 24 bita.</span><br> Uz RAM memoriju
+                        također
+                        ima procesorske registre <span style="font-weight: bold;">R0,R1,R2,R3 i A.</span><br> Procesor
+                        koristi
+                        8-bitne instrukcije, od kojih je <span style="font-weight: bold;"></span>19 dizajnirano za
+                        upravljanje memorijom,<span style="font-weight: bold;"> 46 za računanje,</span> <span
+                            style="font-weight: bold;">15 za
+                            upravljanje tokom programa</span> i <span style="font-weight: bold;">1 za označavanje
+                            završetka
+                            programa.</span> Maksimalna brzina rada
+                        procesora
+                        je 4.1 KHz, zbog ograničenja simulatora.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <script type="text/javascript" src="pointer.js"></script>
 </body>
 
